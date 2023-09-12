@@ -91,3 +91,7 @@ input[type="checkbox"]:checked + label.checkbox-label {
   text-decoration: line-through;
   color: #848282;
 }
+
+input[type="text"] {
+  margin-left: 10px;
+}
