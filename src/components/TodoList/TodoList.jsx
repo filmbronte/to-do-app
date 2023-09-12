@@ -1,3 +1,5 @@
+import { TodoItem } from "./TodoItem/TodoItem";
+
 export const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
     <>
@@ -8,22 +10,14 @@ export const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
         ) : (
           todos.map((todo) => {
             return (
-              <li key={todo.id}>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={todo.checked}
-                    onChange={(e) => toggleTodo(todo.id, e.target.checked)}
-                  />
-                  {todo.title}
-                </label>
-                <button
-                  onClick={() => deleteTodo(todo.id)}
-                  className="btn btn-delete"
-                >
-                  Delete
-                </button>
-              </li>
+              <TodoItem
+                key={todo.id}
+                id={todo.id}
+                completed={todo.completed}
+                title={todo.title}
+                toggleTodo={toggleTodo}
+                deleteTodo={deleteTodo}
+              />
             );
           })
         )}
