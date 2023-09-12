@@ -86,3 +86,7 @@ ul {
 h3 {
   margin-right: 34px;
 }
+
+input[type="checkbox"]:checked + label.test {
+  text-decoration: line-through;
+}
