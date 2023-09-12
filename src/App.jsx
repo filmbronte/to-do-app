@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Form } from "./components/Form/Form.jsx";
 import { TodoList } from "./components/TodoList/TodoList.jsx";
 import "./App.css";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem("items");
+    if (localValue == null) {
+      return [];
+    }
+
+    return JSON.parse(localValue);
+  });
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(todos));
+  }, [todos]);
 
   function addItemHandler(title) {
     setTodos((current) => {
