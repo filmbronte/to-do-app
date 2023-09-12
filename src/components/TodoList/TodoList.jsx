@@ -3,7 +3,7 @@ import { TodoItem } from "./TodoItem/TodoItem";
 export const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
     <>
-      <h2>Todo List</h2>
+      <h2>Tasks</h2>
       <ul>
         {todos.length == 0 ? (
           <h3>No items to show.</h3>
