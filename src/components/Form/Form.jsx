@@ -1,12 +1,34 @@
-export const Form = () => {
+import { useState } from "react";
+
+export const Form = ({ submitHandler }) => {
+  const [newItem, setNewItem] = useState("");
+
+  function onSubmit(e) {
+    e.preventDefault();
+
+    if (newItem == "") {
+      return;
+    }
+
+    submitHandler(newItem);
+
+    setNewItem("");
+  }
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div>
-        <label htmlFor="username">Username: </label>
-        <input type="text" id="username" name="username" />
+        <label htmlFor="task">New task: </label>
+        <input
+          value={newItem}
+          onChange={(e) => setNewItem(e.target.value)}
+          type="text"
+          id="task"
+          name="task"
+        />
       </div>
       <div>
-        <button type="submit">Send</button>
+        <button>Add</button>
       </div>
     </form>
   );
