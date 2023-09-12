@@ -6,7 +6,7 @@ export const TodoItem = ({ id, completed, title, toggleTodo, deleteTodo }) => {
         checked={completed}
         onChange={(e) => toggleTodo(id, e.target.checked)}
       />
-      <label className="test">{title}</label>
+      <label className="checkbox-label">{title}</label>
       <button onClick={() => deleteTodo(id)} className="btn btn-delete">
         Delete
       </button>

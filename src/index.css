@@ -87,7 +87,7 @@ h3 {
   margin-right: 34px;
 }
 
-input[type="checkbox"]:checked + label.test {
+input[type="checkbox"]:checked + label.checkbox-label {
   text-decoration: line-through;
   color: #848282;
 }
