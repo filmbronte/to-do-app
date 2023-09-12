@@ -89,4 +89,5 @@ h3 {
 
 input[type="checkbox"]:checked + label.test {
   text-decoration: line-through;
+  color: #848282;
 }
